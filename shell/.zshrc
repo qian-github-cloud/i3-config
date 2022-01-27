@@ -8,7 +8,7 @@ export ZSH="/home/jt/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="fox"
+ZSH_THEME="blinks"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,17 +107,17 @@ alias plog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 eval "$(fasd --init auto)"
 
 
-PATH="/home/jt/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/jt/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/jt/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/jt/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/jt/perl5"; export PERL_MM_OPT;
-source /home/jt/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# PATH="/home/jt/perl5/bin${PATH:+:${PATH}}"; export PATH;
+# PERL5LIB="/home/jt/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="/home/jt/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+# PERL_MB_OPT="--install_base \"/home/jt/perl5\""; export PERL_MB_OPT;
+# PERL_MM_OPT="INSTALL_BASE=/home/jt/perl5"; export PERL_MM_OPT;
+# source /home/jt/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # run tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-      exec tmux
-fi
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#       exec tmux
+# fi
 
 # project command 
 proj_r() {
@@ -144,10 +144,54 @@ desktop() {
     # tmux split-window -v -p 50 'archey'
 }
 
-alias ytp="./youtube-viewer --audio --results=5"
+alias ytp="proxychains youtube-viewer --audio --results=5"
 
 # copy with tmux
 alias tcopy="tmux show-buffer | xclip -sel clip -i"
 
 # cd to the path
 alias fd="fasd_cd -d"
+
+# proxy
+pxstart() {
+    # export all_proxy='http://localhost:7890'
+    export http_proxy='http://localhost:7890'
+    export https_proxy='https://localhost:7890'
+}
+
+pxdown() {
+    unset http_proxy
+    unset https_proxy
+}
+
+
+# music 
+sp() {
+    pkill spotifyd
+    spotifyd -b pulseaudio -u 1216414009@qq.com -p qq1216414009
+    spt
+}
+
+# call wechat 
+alias wecall="/opt/deepinwine/tools/sendkeys.sh w wechat 4"
+
+# exec fortune
+# fortune | cowsay
+
+# fakefetch
+fakefetch() {
+    sleep 1
+    cat ~/fakefetch.txt
+}
+
+# leftscreen 
+alias leftscreen="xrandr --output HDMI-1-1 --left-of eDP-1 --auto"
+
+# proxychains 
+alias px="proxychains"
+
+# fetch
+neofetch
+
+
+
