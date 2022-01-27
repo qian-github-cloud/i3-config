@@ -9,5 +9,5 @@ cp ~/.alacritty.yml ./alacritty/.alacritty.yml
 
 cp ~/.config/rofi/config.rasi ./rofi/config.rasi   
 cp ~/.config/picom.conf ./picom/picom.conf
-
+cp ~/.i3/config ./i3/config
 
