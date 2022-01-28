@@ -14,6 +14,7 @@ mkdir ~/.config/polybar
 
 sh ./oh_my_zsh.sh
 
+yay -Syu
 yay -S picom-ibhagwan-git
 
 sh ./copyout_file.sh
