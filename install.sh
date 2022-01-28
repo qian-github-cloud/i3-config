@@ -6,7 +6,7 @@ sudo pacman -S alacritty rofi zsh tmux polybar
 sudo rm /usr/bin/terminal
 sudo ln -s /usr/bin/alacritty /usr/bin/terminal
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip
+unzip ./UbuntuMono.zip -d /usr/share/fonts/TTF
 
 mkdir ~/.config/rofi
 mkdir ~/.config/youtube-viewer
