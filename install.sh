@@ -1,7 +1,7 @@
 #/bin/sh 
 
 sudo pacman-mirrors -c China
-sudo pacman -S alacritty rofi zsh tmux polybar
+sudo pacman -S alacritty rofi zsh tmux polybar unzip
 
 sudo rm /usr/bin/terminal
 sudo ln -s /usr/bin/alacritty /usr/bin/terminal
