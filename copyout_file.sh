@@ -1,5 +1,9 @@
 #!/bin/sh
 
+mkdir ~/.config/youtube-viewer
+mkdir ~/.config/rofi
+
+
 cp ./shell/.bashrc ~/.bashrc
 cp ./shell/.tmux.conf ~/.tmux.conf 
 cp ./youtube-viewer/youtube-viewer.conf ~/.config/youtube-viewer/youtube-viewer.conf 
