@@ -10,6 +10,8 @@ mkdir ~/.config/rofi
 mkdir ~/.config/youtube-viewer
 mkdir ~/.config/polybar
 
+sh ./oh_my_zsh.sh
+
 yay -S picom-ibhagwan-git
 
 sh ./copyout_file.sh
